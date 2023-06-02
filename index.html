@@ -2,22 +2,34 @@
 <html lang="pl">
 <head>
   <meta charset="utf-8"/>
-	<title>LOGIN</title>
+	<title>LOGOWANIE</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-     <form action="login.php" method="post">
-     	<h2>LOGIN</h2>
-     	<?php if (isset($_GET['error'])) { ?>
-     		<p class="error"><?php echo $_GET['error']; ?></p>
-     	<?php } ?>
-     	<label>User Name</label>
-     	<input type="text" name="uname" placeholder="User Name"><br>
+<div class="final">
+	<label><h1>finalsport.pl</h1></label>
+</div>
+<form autocomplete="off" action="login.php" method="post">
+    <h2>LOGOWANIE</h2>
+    <?php if (isset($_GET['error'])) { ?>
+        <p class="error"><?php echo $_GET['error']; ?></p>
+    <?php } ?>
+    <div class="absolute-container">
+        <input type="text" name="uname" placeholder="Nazwa użytkownika"><br>
+    </div>
+    <div class="absolute-container">
+        <div class="bottom-marg">
+            <input type="password" name="password" placeholder="Hasło"><br>
+        </div>
+    </div>
+    <div class="form-spacer"></div>
+    <button class="log-button" type="submit">Zaloguj się</button>
+</form> 
 
-     	<label>User Name</label>
-     	<input type="password" name="password" placeholder="Password"><br>
-
-     	<button type="submit">Login</button>
-     </form>
+<form action="register.php" method="post">
+    <div class="button-container-reg">
+        <button class="reg-button" onclick="window.location.href='register.php'">Zarejestruj się</button>
+    </div>		
+</form>
 </body>
 </html>
